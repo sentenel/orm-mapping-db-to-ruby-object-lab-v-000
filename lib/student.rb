@@ -17,11 +17,11 @@ class Student
   def self.find_by_name(name)
     sql = <<-SQL
       SELECT * FROM students
-      WHERE students.name = ?
+      WHERE name = ?
     SQL
 
     row = DB[:conn].execute(sql, name).first
-    
+
     new_from_db(row)
   end
 
