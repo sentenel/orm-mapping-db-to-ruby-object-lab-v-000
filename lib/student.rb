@@ -15,7 +15,7 @@ class Student
     SQL
 
     rows = DB[:conn].execute(sql)
-    
+
     rows.map {|row| Student.new_froM_db(row)}
   end
 
